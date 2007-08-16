@@ -7,6 +7,12 @@
 	<organization>
 		<name>AD Core Client Development Department</name>
 	</organization>
+	<scm>
+		<connection>scm:svn:https://swd-build-server.adnv.adh/svn/core-client-development-pom/trunk</connection>
+		<developerConnection>scm:svn:https://swd-build-server.adnv.adh/svn/core-client-development-pom/trunk</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://swd-build-server.adnv.adh/svn/core-client-development-pom/trunk</url>
+	</scm>
 	<build>
 		<plugins>
 			<plugin>
