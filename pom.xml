@@ -2,17 +2,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>uk.org.netvu</groupId>
 	<artifactId>core-client-development-pom</artifactId>
-	<version>1.0</version>
+	<version>1.1</version>
 	<name>Master POM for Core Client Development</name>
 	<packaging>pom</packaging>
 	<organization>
 		<name>AD Core Client Development Department</name>
 	</organization>
 	<scm>
-		<connection>scm:svn:https://swd-build-server.adnv.adh/svn/core-client-development-pom/tags/core-client-development-pom-1.0</connection>
-		<developerConnection>scm:svn:https://swd-build-server.adnv.adh/svn/core-client-development-pom/tags/core-client-development-pom-1.0</developerConnection>
-		<tag>HEAD</tag>
-		<url>https://swd-build-server.adnv.adh/svn/core-client-development-pom/tags/core-client-development-pom-1.0</url>
+		<connection>scm:svn:https://192.168.106.29/svn/core-client-development-pom/trunk</connection>
+		<developerConnection>scm:svn:https://192.168.106.29/svn/core-client-development-pom/trunk</developerConnection>
+		<url>https://192.168.106.29/svn/core-client-development-pom/trunk</url>
 	</scm>
 	<build>
 		<plugins>
@@ -64,7 +63,7 @@
 			<id>internal</id>
 			<name>Archiva Managed Internal Repository</name>
 			<url>
-				http://192.168.106.20:8081/archiva/repository/internal
+				http://192.168.106.29:8080/archiva/repository/internal
 			</url>
 			<releases>
 				<enabled>true</enabled>
@@ -77,7 +76,7 @@
 			<id>snapshots</id>
 			<name>Archiva Managed Snapshot Repository</name>
 			<url>
-				http://192.168.106.20:8081/archiva/repository/snapshots
+				http://192.168.106.29:8080/archiva/repository/snapshots
 			</url>
 			<releases>
 				<enabled>false</enabled>
@@ -92,7 +91,7 @@
 			<id>internal</id>
 			<name>Archiva Managed Internal Repository</name>
 			<url>
-				http://192.168.106.20:8081/archiva/repository/internal
+				http://192.168.106.29:8080/archiva/repository/internal
 			</url>
 			<releases>
 				<enabled>true</enabled>
