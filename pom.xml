@@ -102,3 +102,4 @@
 		</pluginRepository>
 	</pluginRepositories>
 </project>
+<!-- Adding some bogus comment to test the post-commit e-mail -->
