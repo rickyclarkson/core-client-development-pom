@@ -23,55 +23,139 @@
 					<target>1.5</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.0</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>clean</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</reporting>
-	<dependencies>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging-api</artifactId>
-			<version>1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.3.1</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 	<distributionManagement>
 	    <repository>
 	        <id>internal</id>
 			<name>Archiva Managed Internal Repository</name>
 			<url>
-				http://192.168.106.29:8080/archiva/repository/internal/
+				http://192.168.106.29:8080/archiva/repository/internal
 			</url>
 	    </repository>
 		<snapshotRepository>
 		    <id>snapshots</id>
 			<name>Archiva Managed Snapshot Repository</name>
 			<url>
-				http://192.168.106.29:8080/archiva/repository/snapshots/
+				http://192.168.106.29:8080/archiva/repository/snapshots
 			</url>
 		</snapshotRepository>
 	</distributionManagement>
+    <repositories>
+        <repository>
+            <id>internal</id>
+            <name>Archiva Managed Internal Repository</name>
+            <url>
+                http://192.168.106.29:8080/archiva/repository/internal
+            </url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>Archiva Managed Snapshot Repository</name>
+            <url>
+                http://192.168.106.29:8080/archiva/repository/snapshots
+            </url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>internal</id>
+            <name>Archiva Managed Internal Repository</name>
+            <url>
+                http://192.168.106.29:8080/archiva/repository/internal
+            </url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>snapshots</id>
+            <name>Archiva Managed Internal Repository</name>
+            <url>
+                http://192.168.106.29:8080/archiva/repository/snapshots
+            </url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+    <profiles>
+        <profile>
+            <id>macosx</id>
+            <activation>
+                <os>
+                    <name>mac os x</name>
+                    <arch>i386</arch>
+                </os>
+            </activation>
+            <properties>
+                <os-platform>macosx</os-platform>
+                <os-arch>intel</os-arch>
+            </properties>
+        </profile>
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <os-platform>windows</os-platform>
+                <os-arch>${os.arch}</os-arch>
+            </properties>
+        </profile>
+        <profile>
+            <id>solaris-x86</id>
+            <activation>
+                <os>
+                    <name>sunos</name>
+                    <arch>x86</arch>
+                </os>
+            </activation>
+            <properties>
+                <os-platform>solaris</os-platform>
+                <os-arch>x86</os-arch>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux-x86</id>
+            <activation>
+                <os>
+                    <name>linux</name>
+                    <arch>i386</arch>
+                </os>
+            </activation>
+            <properties>
+                <os-platform>linux</os-platform>
+                <os-arch>x86</os-arch>
+            </properties>
+        </profile>
+    </profiles>
 </project>
