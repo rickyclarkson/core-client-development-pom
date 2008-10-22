@@ -302,7 +302,7 @@
             </activation>
             <properties>
                 <os-platform>macosx</os-platform>
-                <os-arch>intel</os-arch>
+                <os-arch>universal</os-arch>
             </properties>
         </profile>
         <profile>
