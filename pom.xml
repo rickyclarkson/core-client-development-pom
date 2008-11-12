@@ -321,6 +321,19 @@
             </properties>
         </profile>
         <profile>
+            <id>solaris-sparc</id>
+            <activation>
+                <os>
+                    <name>sunos</name>
+                    <arch>sparc</arch>
+                </os>
+            </activation>
+            <properties>
+                <os-platform>solaris</os-platform>
+                <os-arch>sparc</os-arch>
+            </properties>
+        </profile>
+        <profile>
             <id>linux-x86</id>
             <activation>
                 <os>
