@@ -78,11 +78,12 @@
                     <execution>
                         <goals>
                             <goal>testCompile</goal>
+                            <goal>compile</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <scalaVersion>2.7.2</scalaVersion>
+                    <scalaVersion>2.7.5</scalaVersion>
                 </configuration>
             </plugin>
         </plugins>
@@ -98,7 +99,6 @@
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>2.7.2</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.specs</groupId>
